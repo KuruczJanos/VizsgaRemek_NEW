@@ -1,0 +1,33 @@
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.banner{
+    height: 50px;
+    background-color: bisque;
+    background-size: cover;
+    background-position: center center ;
+
+}
+body{
+    background-color: beige;
+    color: #621b2b;
+
+}
+
+li{
+    list-style: none;
+}
+li img{
+    height: 1.5rem;
+}
+.footemail {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+  }

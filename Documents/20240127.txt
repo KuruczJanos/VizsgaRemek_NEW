@@ -1,0 +1,47 @@
+
+
+    <!-- headerbe megy modal-ként -->
+    <!-- <form action="connect.php"><button class="btn btn-primary">Kapcsolat próba</button></form> -->
+    <!-- <div class="container col-md-4">
+        <form name="UserData" action="" method="">
+            <label for="" class="m-auto">Teljes név</label>
+            <input type="text" placeholder="Teljes név" id="UserFullName" name="UserFullName" class="form-control mb-3" required="">
+            <label for="" class="m-auto">Felhasználó név</label>
+            <input type="text" placeholder="Felhasználó név" id="UserName" name="UserName" class="form-control mb-3" required="">
+            <label for="" class="m-auto">E-mail cím</label>
+            <input type="email" placeholder="Email cím" id="UserEmail" name="UserEmail" class="form-control mb-3" required="">
+            <label for="" class="m-auto">Telefon</label>
+            <input type="text" placeholder="Telefonszám" id="UserMobile" name="UserMobile" class="form-control mb-3" required="">
+            <label for="" class="m-auto">Jelenlegi jelszó</label>
+            <input type="password" placeholder="Jelszó megerősítése" id="CurrentPassword" name="CurrentPassword" class="form-control mb-3" required="">
+            <label for="" class="m-auto">Új jelszó</label>
+            <input type="password" placeholder="Jelszó megerősítése" id="NewPassword" name="NewPassword" class="form-control mb-3" required="">
+            <label for="" class="m-auto">Új jelszó megerősítése</label>
+            <input type="password" placeholder="Jelszó megerősítése" id="ConfirmNewPassword" name="ConfirmNewPassword" class="form-control mb-3" required="">
+
+
+            <Input type="checkbox" required=""></Input>
+            <A href="../src/general.html">Általános felhasználói feltételek elfogadása</A>
+            <br>
+            <input type="submit" class="btn btn-primary mt-3" name="SaveButton" value="Mentés">
+            <br><br>
+          </form> -->
+
+
+          <!-- Hirdetés feltöltés - ez nem modal, hanem egy oldal!! -->
+
+          <!--div class="AdsFormUser text-center mt-4">
+  <form action="">
+  Szolgáltatás: <label for="AdsOption"><Select class="form-control" id="AdsOption" name="AdsOption">
+      <option value="Fodrász">Fodrász</option>
+      <option value="Kozmetikus">Kozmetikus</option>
+      <option value="Szempillás">Szempillás</option>
+      <option value="Sminkes">Sminkes</option>
+    </Select></label>
+    <label for="AdsName">Hírdetés neve: <input type="text" name="AdsName" id="AdsName" placeholder=""></label>
+    <label for="AdsAddress">Hírdetés címe: <input type="text" name="AdsAddress" id="AdsAddress" placeholder=""></label>
+    <label for="AdsMobile">Telefonszám: <input type="text" name="AdsMobile" id="AdsMobile" placeholder=""></label>
+    <label for="AdsEmail">Email cím: <input type="email" name="AdsEmail" id="AdsEmail" placeholder=""></label>
+    <label for="AdsButton"><input type="submit" name="AdsButton" id="AdsButton" value="Hírdetés feladása"></label>
+  </form>
+</div-->
