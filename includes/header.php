@@ -46,19 +46,19 @@ ob_start();
       </button>
     </div>
     <div class="modal-body">
-      <form name="RegisterForm" action="register.php" method="POST">
+      <form name="RegisterForm" action="./register.php" method="POST">
         <input type="text" placeholder="Teljes Név" id="RegUserFullName" name="RegUserFullName" class="form-control mt-3" required="">
         <input type="text" placeholder="Felhasználó név" id="RegUserName" name="RegUserName" class="form-control mt-3" required="">
         <input type="email" placeholder="Email cím" id="RegUserEmail" name="RegUserEmail" class="form-control mt-3" required="">
         <input type="text" placeholder="Telefonszám" id="RegUserMobile" name="RegUserMobile" class="form-control mt-3" required="">
         <input type="password" placeholder="Jelszó" id="RegUserPassword" name="RegUserPassword" class="form-control mt-3" required="">
         <input type="password" placeholder="Jelszó megerősítése" id="RegUserRePassword" name="RegUserRePassword" class="form-control mt-3" required="">
-        <br>
-        <br>
+        <label for="" class="m-auto">Kép feltöltés</label><br>
+        <input type="file" class=""  name="UserPhotoUpload" id="UserPhotoUpload"><br><br>
         <Input type="checkbox" required=""></Input>
         <A href="../src/general.html">Általános felhasználói feltételek elfogadása</A>
         <br>
-        <input type="submit" class="btn btn-primary mt-3" name="RegisterButton" value="Regisztráció">
+        <input type="submit" class="btn btn-primary mt-3" name="submit" value="Regisztráció">
         <br><br>
       </form>
     </div>
