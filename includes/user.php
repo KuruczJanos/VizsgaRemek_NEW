@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -9,7 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-        <link rel="stylesheet" href="../styles/style.css">
+        <!-- <link rel="stylesheet" href="../styles/style.css"> -->
         <link rel="stylesheet" href="../styles/source.scss">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +16,13 @@ session_start();
     <title>Profilom</title>
 </head>
 <body>
-<div class="banner">
-<div class="navbar-header">
-  <a href="#" class="navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
-</div>
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<?php 
+        require ('../includes/userNavbar.php');
+       ?>
+<!-- <nav class="banner navbar navbar-expand-lg navbar-dark">
+<a href="#" class="navbar-brand"><img src="<?php echo $_SESSION['UserPhoto']?>" width="100" height="100" class="d-inline-block align-top" alt=""></a>
+ <?php echo 'Üdv ' .$_SESSION['UserFullName'].' !' . "<img src='" . $_SESSION["UserPhoto"] . "' alt='Profile Photo' width='100' height='100'>";?> -->
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -36,8 +36,7 @@ session_start();
       <form action="../includes/logout.php"><input type="submit" class="btn btn-primary" name="LogOutButton" value="Kijelentkezés"></form>
     </div>
   </div>
-</nav>
-</div>
+</nav> --> 
 <div id="AdsUploadForm" style="display: none;">
       <?php 
         require ('../src/adsUploadForm.php');
@@ -62,15 +61,33 @@ session_start();
       </button>
     </div>
     <div class="modal-body">
-      <form name="UpdateUserForm" action="updateuserprofile.php" method="POST">
-        <!--Mobiltelefonszám ellenőrzés hozzáadása kell még-->
+    <img src="<?php echo $_SESSION['UserPhoto']?>" width="150" height="150" class="d-inline-block align-top" alt=""><b>
+    <label for="img"><h1>Profil kép<br>módosítása</h1></label>
+    <div class="form-group" ></div>
+    <form name="UpdateUserForm" action="../includes/userProfileUpdate.php" method="POST" enctype="multipart/form-data" autocomplete="off">
+    <br>
+    <label for="file">Kép feltöltése</label><br>
+    <input type="file" name="UserPhotoUpload" id="UserPhotoUpload" class="form-control mt-3"><br>
+    <label for="text">Új telefonszám</label>
+    <input type="tel" placeholder="Új telefonszám" id="UpdateUserMobile" name="UpdateUserMobile" class="form-control mt-3" value=""><br>
+    <label for="password">Jelszó megadása</label>
+    <input type="password" placeholder="Jelszó" id="UpdateUserPassword" name="UpdateUserPassword"  placeholder="" class="form-control mt-3" autocomplete="off" value="">
+    <input type="password" placeholder="Jelszó megerősítése" id="UpdateUserRePassword" name="UpdateUserRePassword"  placeholder="" class="form-control mt-3" autocomplete="off" value="">
+    <br>
+    <input type="submit" class="btn btn-primary mt-3" name="UpdateButton" value="Mentés">
+    <br><br>
+    
+    </form>
+    </div>
+      <!-- <form name="UpdateUserForm" action="updateuserprofile.php" method="POST">
+        Mobiltelefonszám ellenőrzés hozzáadása kell még
         <input type="tel" placeholder="Telefonszám" id="UpdateUserMobile" name="UpdateUserMobile" class="form-control mt-3" minlength = 11>
         <input type="password" placeholder="Jelszó" id="UpdateUserPassword" name="UpdateUserPassword" class="form-control mt-3" >
         <input type="password" placeholder="Jelszó megerősítése" id="UpdateUserRePassword" name="UpdateUserRePassword" class="form-control mt-3">
         <br>
         <input type="submit" class="btn btn-primary mt-3" name="UpdateButton" value="Mentés">
         <br><br>
-      </form>
+      </form> -->
     </div>
     <div class="modal-footer"> </div>
   </div>
@@ -79,7 +96,8 @@ session_start();
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="../scripts/userFunctions.js"></script>  
+<script src="../scripts/userFunctions.js"></script>
+  
     <?php
      //ob_start();
     //echo $_SESSION['results'];

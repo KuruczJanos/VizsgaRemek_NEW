@@ -1,4 +1,4 @@
-.navbar-brand {
+.home {
     float: left;
     height: 50px;
     padding: 15px 15px;
@@ -6,11 +6,13 @@
     line-height: 20px;
 }
 .banner{
-    height: 50px;
+    height: 120px;
     background-color: bisque;
     background-size: cover;
     background-position: center center ;
-
+}
+.user{
+    background-color: bisque;
 }
 body{
     background-color: beige;

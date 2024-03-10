@@ -11,7 +11,7 @@ ob_start();
 <body>
 <div class="banner">
 <div class="navbar-header">
-  <a href="#" class="navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
+  <a href="#" class="home navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@ ob_start();
       </button>
     </div>
     <div class="modal-body">
-      <form name="RegisterForm" action="./register.php" method="POST">
+      <form name="RegisterForm" action="../includes/register.php" method="POST" enctype="multipart/form-data">
         <input type="text" placeholder="Teljes Név" id="RegUserFullName" name="RegUserFullName" class="form-control mt-3" required="">
         <input type="text" placeholder="Felhasználó név" id="RegUserName" name="RegUserName" class="form-control mt-3" required="">
         <input type="email" placeholder="Email cím" id="RegUserEmail" name="RegUserEmail" class="form-control mt-3" required="">
