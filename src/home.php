@@ -14,7 +14,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
-  </head>
+        <!-- <link rel="stylesheet" href="../styles/scssto.css"> -->
+        <!-- <style>
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        </style> -->
+      </head>
   <body>
     <div class="container-fluid">
       <?php 
@@ -28,20 +32,10 @@
         <h1 class="text-center p-3">Szolgáltatások</h1>
         <?php 
           require ('../includes/cardbx.php');
+          echo "<br>";
+          require ('../includes/footerContainer.php');
        ?>
-      </div> 
-    <footer class="container-fluid text-dark">
-      <div class="footemail row align-middle">
-        <div class="col-md-4 col-12">
-          <h3>Feliratkozás</h3>
-          <p>Iratkozz fel, hogy értesülj friss partnereinkről!</p>
-          <form class="form-inline">
-            <input type="email" class="form-control" placeholder="example@example.com" />
-            <button class="btn btn-danger m-1">Feliratkozom</button>
-          </form>
-        </div>
-      </div>
-    </footer>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -53,9 +47,7 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
-  </body>
-
     <script src="../scripts/functions.js"></script>
-    
   </body>
+  
 </html>

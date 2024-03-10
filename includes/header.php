@@ -11,7 +11,7 @@ ob_start();
 <body>
 <div class="banner">
 <div class="navbar-header">
-  <a href="#" class="home navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
+  <a href="" class="home navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@ ob_start();
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-    <div class="navbar-nav ml-auto">
+    <div class="buttons navbar-nav ml-auto">
       
       <button type="button" class="mr-4 btn btn-primary" 
       data-toggle="modal" data-target="#signinModal">
