@@ -1,31 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
-.container{font-family: 'Dancing Script', cursive;}
-.card:hover {
-    /* Stílusok, amikor az egér fölötte van */
-    transform: scale(1.1);
-}
-.buttons{
-    align-items: center;
-}
-.home {
+.navbar-brand {
     float: left;
     height: 50px;
     padding: 15px 15px;
     font-size: 18px;
     line-height: 20px;
-    color: white;
 }
 .banner{
-    /* display: flex; */
-    height: 120px;
-    /* background-color: bisque; */
-    background-color: rgb(35, 30, 30);
+    height: 50px;
+    background-color: bisque;
     background-size: cover;
     background-position: center center ;
-    color: white;
-}
-.user{
-    background-color: bisque;
+
 }
 body{
     background-color: beige;

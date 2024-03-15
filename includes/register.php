@@ -20,10 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $RegUserType = "0";
     $RegUserAz = "NULL";
     $RegUserPhoto = NULL; // Alapértelmezett érték, ha nem történik képfeltöltés
-    $ImgDirectory = "../img/users/";
-    $ImgFileName = uniqid() . "_" . basename( $_FILES["UserPhotoUpload"]["name"]);
-    $ImgFileURL = $ImgDirectory . $ImgFileName;
-
 
     $RegResetCode = getRandomString($n);
 
@@ -34,11 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $allowedExtensions = array('jpg', 'jpeg', 'png');
 
             if (in_array(strtolower($fileExtension), $allowedExtensions)) {
+                $uniqueFileName = uniqid() . '_' . $fileExtension; // Kép egyedi neve
+                $uploadPath = 'img/users/' . $uniqueFileName; // Feltöltési útvonal a szerveren
 
                 // Mozgasd a feltöltött fájlt a megfelelő helyre
-                move_uploaded_file($_FILES['UserPhotoUpload']['tmp_name'], $ImgFileURL);
+                move_uploaded_file($_FILES['UserPhotoUpload']['tmp_name'], $uploadPath);
 
-                $RegUserPhoto = $ImgFileURL; // Állítsd be a kép nevét az adatbázisban tárolandó értékre
+                $RegUserPhoto = $uniqueFileName; // Állítsd be a kép nevét az adatbázisban tárolandó értékre
             } else {
                 echo ("<script>alert('Csak JPG, JPEG vagy PNG formátumú képeket lehet feltölteni.'); window.location.href = './src/home.php';</script>");
             }
@@ -60,8 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt = $conn->prepare($INSERT);
             $stmt->bind_param("sssssssss", $RegUserAz, $RegUserName, $RegUserPassword, $RegUserEmail, $RegUserMobile, $RegUserFullName, $RegUserType, $RegUserPhoto, $RegResetCode);
             $stmt->execute();
-            // echo ("Fasz van már?");
-            exit("<script>alert('Felhasználó sikeresen regisztrálva!'); window.location.href = '../src/home.php';</script>");
+            exit("<script>alert('Felhasználó sikeresen regisztrálva!'); window.location.href = './src/home.php';</script>");
             // echo "Új felhasználó sikeresen regisztráltva";
         } else {
           echo "<script>alert('Ezzel az Email cimmel már regisztráltak!'); history.back();</script>";

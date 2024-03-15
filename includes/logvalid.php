@@ -29,7 +29,6 @@ if($num == 1)
         $ActiveUserEmail = $rows['UserEmail'];
         $ActiveUserPassword = $rows['UserPassword'];
         $ActiveUserMobile = $rows['UserMobile'];
-        $ActiveUserPhoto = $rows['UserPhoto'];
     }
 //$_SESSION['results'] = $result['UserAz'];
 //$_SESSION['UserEmail'] = $LogEmail;
@@ -39,7 +38,6 @@ $_SESSION['UserFullName'] = $ActiveUserFullName;
 $_SESSION['UserEmail'] = $ActiveUserEmail;
 $_SESSION['UserMobile'] = $ActiveUserMobile;
 $_SESSION['UserPassword'] = $ActiveUserPassword;
-$_SESSION['UserPhoto'] = $ActiveUserPhoto;
 
     if($ActiveUserEmail==$LogEmail && $ActiveUserPassword==$LogPassword){
          header("Location: ../includes/user.php");

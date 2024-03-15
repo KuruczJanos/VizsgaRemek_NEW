@@ -8,7 +8,7 @@ if (mysqli_connect_error()){
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["UpStoreType"]) && isset($_POST["UpStoreDescription"]) && isset($_POST["UpStoreMobile"]) && isset($_POST["UpStoreEmail"]) && isset($_POST["UpStoreAddress"]) && isset($_POST["UpStoreName"])) {
             $UpStoreUserAz = $_SESSION['UserAz'];
-            $UpStoreAdAz = NULL;
+            $UpStoreAdAz = ["NULL"];
             $UpStoreName = $_POST["UpStoreName"];
             $UpStoreType = $_POST["UpStoreType"];
             $UpStoreAddress = $_POST["UpStoreAddress"];
@@ -31,21 +31,20 @@ if (mysqli_connect_error()){
                     $stmt->execute();
                     $stmt->close();
                     $conn->close();
-                    // echo 'A fájl sikeresen feltöltve.';
                     exit("<script>alert('A fájl sikeresen feltöltve.'); window.location.href = 'user.php';</script>");
-                    // echo "<pre>";
-                    // print_r($_REQUEST);
-                    // echo "</pre>";
-                    // echo "UpStoreName: " . $UpStoreName . "   ";
-                    // echo "UpStoreType: " .$UpStoreType . "   ";
-                    // echo "UpStoreUserAz: " . $_SESSION["UserAz"] . "   ";
-                    // echo "ImgDatas:  " . $ImgFileURL . "    " . $ImgFileName . "   ";
-                    // echo "FileToUpload: " . $FileToUpload . "  ";
+                    echo "<pre>";
+                    print_r($_REQUEST);
+                    echo "</pre>";
+                    echo "UpStoreName: " . $UpStoreName . "   ";
+                    echo "UpStoreType: " .$UpStoreType . "   ";
+                    echo "UpStoreUserAz: " . $_SESSION["UserAz"] . "   ";
+                    echo "ImgDatas:  " . $ImgFileURL . "    " . $ImgFileName . "   ";
+                    echo "FileToUpload: " . $FileToUpload . "  ";
                 }else{
                     echo "<script>alert('Sajnálom, a képet nem sikerült feltölteni.');</script>";
-                    // echo "<pre>";
-                    // print_r($_FILES);
-                    // echo "</pre>";
+                    echo "<pre>";
+                    print_r($_FILES);
+                    echo "</pre>";
                     exit();
                 }
                 }
