@@ -1,6 +1,4 @@
-<?php
-ob_start();
-?>
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +6,18 @@ ob_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-<div class="banner">
-<div class="navbar-header">
-  <a href="#" class="navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
+<body> -->
+<div class="container-fluid banner">
+<div class="container-fluid navbar-header">
+  <a href="" class="home navbar-brand"><b>Az oldal neve</b>Találjuk ki!</a>
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="container-fluid navbar navbar-expand-lg navbar-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
-    <div class="navbar-nav ml-auto">
+    <div class="buttons navbar-nav ml-auto">
       
       <button type="button" class="mr-4 btn btn-primary" 
       data-toggle="modal" data-target="#signinModal">
@@ -46,15 +44,15 @@ ob_start();
       </button>
     </div>
     <div class="modal-body">
-      <form name="RegisterForm" action="./register.php" method="POST">
+      <form name="RegisterForm" action="../includes/register.php" method="POST" enctype="multipart/form-data">
         <input type="text" placeholder="Teljes Név" id="RegUserFullName" name="RegUserFullName" class="form-control mt-3" required="">
         <input type="text" placeholder="Felhasználó név" id="RegUserName" name="RegUserName" class="form-control mt-3" required="">
         <input type="email" placeholder="Email cím" id="RegUserEmail" name="RegUserEmail" class="form-control mt-3" required="">
         <input type="text" placeholder="Telefonszám" id="RegUserMobile" name="RegUserMobile" class="form-control mt-3" required="">
         <input type="password" placeholder="Jelszó" id="RegUserPassword" name="RegUserPassword" class="form-control mt-3" required="">
         <input type="password" placeholder="Jelszó megerősítése" id="RegUserRePassword" name="RegUserRePassword" class="form-control mt-3" required="">
-        <label for="" class="m-auto">Kép feltöltés</label><br>
-        <input type="file" class=""  name="UserPhotoUpload" id="UserPhotoUpload"><br><br>
+        <label for="UserPhotoUpload" class="m-auto">Kép feltöltés<br>
+        <input type="file" class=""  name="UserPhotoUpload" id="UserPhotoUpload"></label><br><br>
         <Input type="checkbox" required=""></Input>
         <A href="../src/general.html">Általános felhasználói feltételek elfogadása</A>
         <br>
@@ -78,11 +76,11 @@ ob_start();
       </button>
     </div>
     <div class="modal-body">
-      <form name="LoginForm" action="" method="POST" >
+      <form name="LoginForm" id="LoginForm" action="../includes/checkpost.php" method="POST" >
         <p>Email cím</p>
-        <input type="email" class="form-control" name="LogEmailInput" placeholder="valaki@valami.com" required="">
+        <input type="email" class="form-control" name="LogEmailInput" placeholder="valaki@valami.com">
         <p class="mt-3">Jelszó</p>
-        <input type="password" class="form-control" name="LogPassInput" placeholder="Jelszó megadása" required="">
+        <input type="password" class="form-control" name="LogPassInput" placeholder="Jelszó megadása">
         <div class="forgetpass mt-3">
           <a href="./forgetpass.html">Elfelejtetted a jelszavad?</a>
         </div>
@@ -97,8 +95,8 @@ ob_start();
   </div>
 </div>
 </div>
-</body>
-</html>
+<!-- </body>
+</html> -->
 
 
 

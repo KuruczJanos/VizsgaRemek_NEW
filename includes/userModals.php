@@ -11,18 +11,19 @@
       </button>
     </div>
     <div class="modal-body">
-    <img src="<?php echo $_SESSION['UserPhoto']?>" width="150" height="150" class="d-inline-block align-top" alt=""><b>
-    <label for="img"><h1>Profil kép<br>módosítása</h1></label>
+    
+    <img src="<?php echo $_SESSION['UserPhoto']?>" id="img" width="150" height="150" class="d-inline-block align-top" alt=""><b>
+    <p><h1>Profil kép<br>módosítása</h1></p>
     <div class="form-group" ></div>
     <form name="UpdateUserForm" action="../includes/userProfileUpdate.php" method="POST" enctype="multipart/form-data" autocomplete="off">
     <br>
-    <label for="file">Kép feltöltése</label><br>
-    <input type="file" name="UserPhotoUpload" id="UserPhotoUpload" class="form-control mt-3"><br>
-    <label for="text">Új telefonszám</label>
-    <input type="tel" placeholder="Új telefonszám" id="UpdateUserMobile" name="UpdateUserMobile" class="form-control mt-3" value=""><br>
-    <label for="password">Jelszó megadása</label>
-    <input type="password" placeholder="Jelszó" id="UpdateUserPassword" name="UpdateUserPassword"  placeholder="" class="form-control mt-3" autocomplete="off" value="">
-    <input type="password" placeholder="Jelszó megerősítése" id="UpdateUserRePassword" name="UpdateUserRePassword"  placeholder="" class="form-control mt-3" autocomplete="off" value="">
+    <label for="UserPhotoUpload">Kép feltöltése<br>
+    <input type="file" name="UserPhotoUpload" id="UserPhotoUpload" class="form-control mt-3"></label><br>
+    <label for="UpdateUserMobile">Új telefonszám
+    <input type="UpdateUserPassword" placeholder="Új telefonszám" id="UpdateUserMobile" name="UpdateUserMobile" class="form-control mt-3" value=""></label><br>
+    <label for="UpdateUserPassword">Jelszó megadása
+    <input type="password" placeholder="Jelszó" id="UpdateUserPassword" name="UpdateUserPassword"  placeholder="" class="form-control mt-3" autocomplete="off"></label>
+    <input type="password" placeholder="Jelszó megerősítése" id="UpdateUserRePassword" name="UpdateUserRePassword"  placeholder="" class="form-control mt-3" autocomplete="off">
     <br>
     <input type="submit" class="btn btn-primary mt-3" name="UpdateButton" value="Mentés">
     <br><br>

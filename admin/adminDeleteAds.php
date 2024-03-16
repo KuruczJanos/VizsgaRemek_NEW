@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include('../includes/connect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ellenőrizzük, hogy az adott hirdetés azonosítója elküldve lett-e
@@ -14,13 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Ellenőrizd, hogy sikeres volt-e a törlés
         if ($stmt->affected_rows > 0) {
             // echo "A hirdetés sikeresen törölve.";
-            if($_SESSION['Type'] > 0){
-                echo $_SESSION['Type'];
-                // exit("<script>alert('A hirdetés sikeresen törölve lett!.'); window.location.href = '../admin/admin.php';</script>");
-            } else{
-                echo $_SESSION['Type'];
-                // exit("<script>alert('A hirdetés sikeresen törölve lett!.'); window.location.href = 'user.php';</script>");
-            }
+
+                exit("<script>alert('A hirdetés sikeresen törölve lett!.'); window.location.href = '../admin/admin.php';</script>");
             
         } else {
             echo "Hiba történt a hirdetés törlése közben.";

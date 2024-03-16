@@ -6,6 +6,15 @@ document.getElementById('showAdsUploadForm').addEventListener('click', function(
         adsUploadForm.style.display = 'none';
     }
 });
+document.addEventListener( "DOMContentLoaded", function() {
+    var UpdateUserMobile = document.getElementById("UpdateUserMobile");
+    var UpdateUserPassword = document.getElementById("UpdateUserPassword");
+    var UpdateUserRePassword = document.getElementById("UpdateUserRePassword");
+    UpdateUserMobile.value = "";
+    UpdateUserPassword.value = "";
+    UpdateUserRePassword.value = "";
+});
+
 $('#modifyModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget); // A gomb, amelyre kattintottak
     var adId = button.data('ad-id'); // A hirdetés azonosítója, amelyet átadtak a gombhoz

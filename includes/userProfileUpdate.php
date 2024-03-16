@@ -14,6 +14,7 @@ if(isset($_POST['UpdateButton'])) {
         $stmt->bind_param('ss', $UpdateUserMobile, $UserAzUP);
         $stmt->execute();
         $stmt->close();
+        exit("<script>alert('Sikeres telefon módositás!'); window.location.href = 'user.php';</script>");
     }
 
     // Jelszó frissítése
@@ -28,9 +29,10 @@ if(isset($_POST['UpdateButton'])) {
             $stmt->bind_param('ss', $UpdateUserPassword, $UserAzUP);
             $stmt->execute();
             $stmt->close();
+            exit("<script>alert('Sikeres módositás!'); window.location.href = 'user.php';</script>");
         } else {
 
-            exit("<script>alert('A megadott jelszavak nem egyeznek!'); window.location.href = 'user.php';</script>");
+            exit("<script>alert('A jelszavak nem egyeznek!'); window.location.href = 'user.php';</script>");
         }
     }
 
@@ -44,13 +46,14 @@ if(isset($_POST['UpdateButton'])) {
         $ImgFileType = strtolower(pathinfo($ImgFileURL, PATHINFO_EXTENSION));
         if($ImgFileType == "jpg" || $ImgFileType == "png" || $ImgFileType == "jpeg" || $ImgFileType == "gif") {
             // Régi profilkép törlése a szerverről
-            $query = "SELECT UserPhoto FROM users WHERE UserAz = ?";
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param('s', $UserAzUP);
-            $stmt->execute();
-            $stmt->bind_result($oldUserPhoto);
-            $stmt->fetch();
-            $stmt->close();
+            // $query = "SELECT UserPhoto FROM users WHERE UserAz = ?";
+            // $stmt = $conn->prepare($query);
+            // $stmt->bind_param('s', $UserAzUP);
+            // $stmt->execute();
+            // $stmt->bind_result($oldUserPhoto);
+            // $stmt->fetch();
+            // $stmt->close();
+            $oldUserPhoto = $_SESSION['UserPhoto'];
 
             if($oldUserPhoto && file_exists($oldUserPhoto)) {
                 unlink($oldUserPhoto);
@@ -63,6 +66,8 @@ if(isset($_POST['UpdateButton'])) {
             $stmt->bind_param('ss', $ImgFileURL, $UserAzUP);
             $stmt->execute();
             $stmt->close();
+            $_SESSION['UserPhoto'] = $ImgFileURL;
+            exit("<script>alert('Sikeres profilkép módositas!'); window.location.href = 'user.php';</script>");
         } else {
             exit("<script>alert('Csak JPG, JPEG, PNG & GIF fájlokat lehet feltölteni!'); window.location.href = 'user.php';</script>");
             // echo '<script>alert("Csak JPG, JPEG, PNG & GIF fájlokat lehet feltölteni!")</script>';

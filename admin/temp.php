@@ -1,34 +1,4 @@
-     <div class="container-fluid col border m-10">
-                <h1 class="text-center mt-4">Feltöltött hirdetéseim</h1>
-                        <?php
-                        include ('connect.php');
-                        // Adatok lekérése az adatbázisból
-                        $UserAz = $_SESSION["UserAz"];
-                        $stmt = $conn->prepare("SELECT * FROM ads WHERE UserAz = ?");
-                        $stmt->bind_param("s", $UserAz);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-
-                        // Ellenőrizd, hogy van-e eredmény
-                        if ($result->num_rows > 0) {
-                        echo "<div class='table-responsive'>";
-                        echo "<table class='table'>";
-                        echo "<thead class='thead-dark'>
-                                <tr>
-                                <th scope='col'>Üzlet neve </th>
-                                <th scope='col'>Email </th>
-                                <th scope='col'>Telefonszám </th>
-                                <th scope='col'>Szolgáltatás </th>
-                                <th scope='col'>Település</th>
-                                <th scope='col'>Leirás</th>
-                                <th scope='col'>Kép</th>
-                                <th scope='col'>-------</th>
-                                <th scope='col'>-------</th>
-                                </tr>
-                        </thead>";
-                        // Adatok megjelenítése táblázatban
-                        while($row = $result->fetch_assoc()) {
-                                echo "<tbody>";
+echo "<tbody>";
                                 echo "<tr>";
                                 // echo "<td>" . $row["AdAz"] . "</td>";
                                 echo "<td scope='row'>" . $row["StoreName"] . "</td>";
@@ -91,7 +61,7 @@
                                 //                                 Módosítás
                                 //                                 </button>
                                 //                                 </form>' . "</td>";
-                                echo "<td scope='row'><form action='../includes/deleteUserAds.php' method='post'>
+                                echo "<td scope='row'><form action='../admin/adminDeleteAds.php' method='post'>
                                 <input type='hidden' name='ad_id' value='" . $row['AdAz'] . "'>
                                 <button class='btn btn-secondary' type='submit'>Törlés</button>
                                 </form></td>";
@@ -101,16 +71,20 @@
                                 //                                 </form>"</td>";
                                 echo "</tr>";
                                 echo "</tbody>";
-                        }
-                        echo "</table>";
-                        echo "</div>";
-                        } else {
-                        echo "Nincs elérhető adat.";
-                        }
-                        $stmt->close();
-                        $conn->close();
-                        ?>
-        </div>  
-        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+Yo4U4r3+6G8z6XvBuv2KQOel9ZOp5Lym9+JvoV" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-AkGnakAk4EZq8vEtj0F/1pExbx1v1lBk7w+7uZ0W+COlf3mrKPrZf8wD1JFOIMxZ" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-LIt051sstqu21ndwYT7ZsZk3KL9RjH8D6Lh0N8OagCKgljK/kzOA8hjWzJ4yPGNp" crossorigin="anonymous"></script> -->
+
+                                echo "<div class='table-responsive'>";
+                        echo "<table class='table'>";
+                        echo "<thead class='thead-dark'>
+                                <tr>
+                                <th scope='col'>Üzlet neve </th>
+                                <th scope='col'>Email </th>
+                                <th scope='col'>Telefonszám </th>
+                                <th scope='col'>Szolgáltatás </th>
+                                <th scope='col'>Település</th>
+                                <th scope='col'>Leirás</th>
+                                <th scope='col'>Kép</th>
+                                <th scope='col'>-------</th>
+                                <th scope='col'>-------</th>
+                                </tr>
+                        </thead>";
+                        // Adatok megjelenítése táblázatban

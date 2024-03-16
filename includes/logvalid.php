@@ -1,9 +1,9 @@
 ﻿<?php
-ob_start();
+// ob_start();
 session_start();
-include ('header.php');
+// include ('header.php');
 include('connect.php');
-if(isset($_POST['LoginButton'])){
+if(isset($_POST['LogEmailInput']) && !empty($_POST['LogEmailInput']) && isset($_POST['LogPassInput']) && !empty($_POST['LogPassInput'])){
 
 $LogEmail=$_POST['LogEmailInput'];
 
@@ -29,6 +29,8 @@ if($num == 1)
         $ActiveUserEmail = $rows['UserEmail'];
         $ActiveUserPassword = $rows['UserPassword'];
         $ActiveUserMobile = $rows['UserMobile'];
+        $ActiveUserPhoto = $rows['UserPhoto'];
+        $ActiveUserType = $rows['Type'];
     }
 //$_SESSION['results'] = $result['UserAz'];
 //$_SESSION['UserEmail'] = $LogEmail;
@@ -38,13 +40,20 @@ $_SESSION['UserFullName'] = $ActiveUserFullName;
 $_SESSION['UserEmail'] = $ActiveUserEmail;
 $_SESSION['UserMobile'] = $ActiveUserMobile;
 $_SESSION['UserPassword'] = $ActiveUserPassword;
+$_SESSION['UserPhoto'] = $ActiveUserPhoto;
+$_SESSION['Type'] = $ActiveUserType;
 
     if($ActiveUserEmail==$LogEmail && $ActiveUserPassword==$LogPassword){
-         header("Location: ../includes/user.php");
-        } else {
-            echo  
-            '<script>alert("A felhasználó név vagy a jelszó hibás!")</script>';
-            }
+        if($ActiveUserType == 1){
+            header("Location: ../admin/admin.php");
+        }else{
+            header("Location: ../includes/user.php");
+        }
+
+    } else {
+        echo  
+        '<script>alert("A felhasználó név vagy a jelszó hibás!")</script>';
+        }
 //print 'Üdv, '.$adatok['UserEmail'].''; //belépett falhasználó, ha kiírja a nevét akkor működik
 //setcookie("UserEmail", "$LogEmail");
 //echo  " a user neve: $_SESSION ";
@@ -61,4 +70,5 @@ echo
     //print 'Üdv, '.$_SESSION['UserEmail'].''; //belépett falhasználó, ha kiírja a nevét akkor működik
 //}
 }
+$conn->close();
 ?>

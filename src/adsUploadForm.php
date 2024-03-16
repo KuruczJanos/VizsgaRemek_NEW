@@ -10,16 +10,16 @@
     <!-- <link rel="stylesheet" href="../styles/adsUploadStyle.css"> -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/source.scss">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
-</head>
+</head> -->
 <body>
     <h1 class="text-center mt-3">Hirdetés felöltése</h1>
     <div class="container col-md-8 border">
         <div class="container">
             <form action="../includes/adsUploadOK.php" method="POST" enctype="multipart/form-data">
-                    <label for="" class="m-auto">Üzlet neve</label>
+                    <label for="UpStoreName" class="m-auto">Üzlet neve</label>
                     <input type="text" placeholder="Üzlet neve" id="UpStoreName" name="UpStoreName" class="form-control mb-3" required="">
                     <label for="UpStoreType">Üzlet tipusa</label>
                     <Select class="form-control" id="UpStoreType" name="UpStoreType">
@@ -28,15 +28,15 @@
                         <option value="Szempillás">Szempillás</option>
                         <option value="Sminkes">Sminkes</option>
                     </Select>
-                    <label for="" class="m-auto">Cím</label>
+                    <label for="UpStoreAddress" class="m-auto">Cím</label>
                     <input type="text" placeholder="Cím" id="UpStoreAddress" name="UpStoreAddress" class="form-control mb-3" required="">
-                    <label for="" class="m-auto">E-mail cím</label>
+                    <label for="UpStoreEmail" class="m-auto">E-mail cím</label>
                     <input type="email" placeholder="Email cím" id="UpStoreEmail" name="UpStoreEmail" class="form-control mb-3" required="">
-                    <label for="" class="m-auto">Telefon</label>
+                    <label for="UpStoreMobile" class="m-auto">Telefon</label>
                     <input type="text" placeholder="Telefonszám" id="UpStoreMobile" name="UpStoreMobile" class="form-control mb-3" required="">
-                    <label for="" class="m-auto">Leírás</label>
+                    <label for="UpStoreDescription" class="m-auto">Leírás</label>
                     <input type="text" placeholder="Leírás" id="UpStoreDescription" name="UpStoreDescription" class="form-control mb-3" required="">
-                    <label for="" class="m-auto">Kép feltöltés</label><br>
+                    <label for="FileToUpload" class="m-auto">Kép feltöltés</label><br>
                     <input type="file" class=""  name="FileToUpload" id="FileToUpload"><br>
                     <input type="submit" class="btn btn-primary mt-3" name="submit" value="Hirdetés feltöltése"><br><br>
             </form>
