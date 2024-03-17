@@ -16,4 +16,11 @@ if (isset($_POST['SubscribeButton'])) {
     // header("Location: ../includes/subscribe.php"); // Irányítás a subscribe.php fájlra
     exit(); // Kilépés a szkript végrehajtásából
 }
+if (isset($_POST['listService'])) {
+    include ('listServicesContent.php');
+    // Itt hajtsd végre a feliratkozási műveleteket
+    // Például: adatbázisba mentés, ellenőrzések stb.
+    // header("Location: ../includes/subscribe.php"); // Irányítás a subscribe.php fájlra
+    exit(); // Kilépés a szkript végrehajtásából
+}
 ?>

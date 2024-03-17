@@ -25,10 +25,16 @@ function handleSubscribeFormSubmit(event) {
     document.getElementById('SubscribeForm').action = '../includes/subscribe.php';
     document.getElementById('SubscribeForm').submit(); // Feliratkozási űrlap elküldése
 }
+function handlelistServiceFormSubmit(event) {
+    event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
+    document.getElementById('listServiceForm').action = '../includes/listServicesContent.php';
+    document.getElementById('listServiceForm').submit(); // Feliratkozási űrlap elküldése
+}
 
 // Az űrlapok elküldését figyelő eseménykezelő hozzáadása
 document.getElementById('LoginForm').addEventListener('submit', handleLoginFormSubmit);
 document.getElementById('SubscribeForm').addEventListener('submit', handleSubscribeFormSubmit);
+document.getElementById('listServiceForm').addEventListener('submit', handlelistServiceFormSubmit);
 // // JavaScript függvény az űrlapok elküldésének kezelésére
 // function handleFormSubmit(event) {
 //     event.preventDefault(); // Megakadályozzuk az alapértelmezett űrlap elküldését

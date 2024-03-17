@@ -1,9 +1,6 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"); */
 .container{font-family: 'Times New Roman', cursive;}
-.card:hover {
-    /* Stílusok, amikor az egér fölötte van */
-    transform: scale(1.1);
-}
+
 .buttons{
     /* align-items: center; */
     display: flex;
@@ -29,7 +26,7 @@
     background-color: bisque;
 }
 body{
-    background-color: beige;
+    background-color: rgb(255, 255, 244);
     color: #621b2b;
 
 }
@@ -46,4 +43,58 @@ li img{
         content: "";
         clear: both;
       }
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Minden oszlop 1fr széles lesz */
+    gap: 20px;
+    padding: 20px;
+    overflow: auto;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    float: left;
+    width: calc(33.333% - 20px); /* Példa: Három kártya egy sorban */
+    margin-right: 20px; /* Választható: A kártyák közötti térköz */
+  }
+  .card:last-child {
+    margin-right: 0; /* Az utolsó kártya nem kap margin-right-et */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+    /* max-height: 200px; Vagy más méret */
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-content h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333333;
+  }
+  
+  /* .card-content p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #666666;
+  } */
+  .grid-container {
+    content: "";
+    display: table;
+    clear: both;
   }
