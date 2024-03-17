@@ -14,27 +14,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-function handleLoginFormSubmit(event) {
-    event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
-    document.getElementById('LoginForm').action = '../includes/logvalid.php';
-    document.getElementById('LoginForm').submit(); // Bejelentkezési űrlap elküldése
-}
+// function handleLoginFormSubmit(event) {
+//     event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
+//     document.getElementById('LoginForm').action = '../includes/logvalid.php';
+//     document.getElementById('LoginForm').submit(); // Bejelentkezési űrlap elküldése
+// }
 
-function handleSubscribeFormSubmit(event) {
-    event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
-    document.getElementById('SubscribeForm').action = '../includes/subscribe.php';
-    document.getElementById('SubscribeForm').submit(); // Feliratkozási űrlap elküldése
-}
-function handlelistServiceFormSubmit(event) {
-    event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
-    document.getElementById('listServiceForm').action = '../includes/listServicesContent.php';
-    document.getElementById('listServiceForm').submit(); // Feliratkozási űrlap elküldése
-}
+// function handleSubscribeFormSubmit(event) {
+//     event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
+//     document.getElementById('SubscribeForm').action = '../includes/subscribe.php';
+//     document.getElementById('SubscribeForm').submit(); // Feliratkozási űrlap elküldése
+// }
+// function handlelistServiceFormSubmit(event) {
+//     event.preventDefault(); // Az alapértelmezett űrlap elküldésének megakadályozása
+//     document.getElementById('listServiceForm').action = '../includes/listServicesContent.php';
+//     document.getElementById('listServiceForm').submit(); // Feliratkozási űrlap elküldése
+// }
 
 // Az űrlapok elküldését figyelő eseménykezelő hozzáadása
-document.getElementById('LoginForm').addEventListener('submit', handleLoginFormSubmit);
-document.getElementById('SubscribeForm').addEventListener('submit', handleSubscribeFormSubmit);
-document.getElementById('listServiceForm').addEventListener('submit', handlelistServiceFormSubmit);
+// document.getElementById('LoginForm').addEventListener('submit', handleLoginFormSubmit);
+// document.getElementById('SubscribeForm').addEventListener('submit', handleSubscribeFormSubmit);
+// document.getElementById('listServiceForm').addEventListener('submit', handlelistServiceFormSubmit);
 // // JavaScript függvény az űrlapok elküldésének kezelésére
 // function handleFormSubmit(event) {
 //     event.preventDefault(); // Megakadályozzuk az alapértelmezett űrlap elküldését

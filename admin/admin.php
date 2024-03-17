@@ -9,7 +9,7 @@ session_start();
         require ('../admin/adminNavBar.php');
     ?>  
     <div class="navbar container-fluid">
-    <a href="#" class="btn btn-primary" id="showAds">Hirdetések</a>
+    <button href="#" class="btn btn-primary" id="showAds">Hirdetések</button>
     <a href="#" class="btn btn-primary" id="showUsers">Felhasználók</a>
     <a href="#" class="btn btn-primary" id="showMessages">Üzenetek</a>    
     </div>
