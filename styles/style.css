@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"); */
-.container{font-family: 'Times New Roman', cursive;}
+.container{font-family: 'Times New Roman';}
 
 .buttons{
     /* align-items: center; */
@@ -52,7 +52,8 @@ li img{
     overflow: auto;
   }
   
-  .card {
+  .card{
+    -webkit-transition: transform 0.3s ease; /* Safari és Chrome */
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;

@@ -2,7 +2,7 @@
     // echo '<div class="row-md-4">';
     // echo '<div class="cols-md-3" g-4>';
     echo '
-            <div class="card">
+            <div class="card homeCards">
                 <img src="'.$row['ServiceImgURL'] .'" alt="Kép 1">
                     <div class="card-content">
                     <h3 class="d-block">
