@@ -10,13 +10,18 @@
     include ('connect.php');
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST["listService"])){
+<<<<<<< HEAD
             // echo $_POST["listService"];
+=======
+            echo $_POST["listService"];
+>>>>>>> 3263e6e5efd970c0a8b5ee25221056fd9e4ca2d4
         $stmt = $conn->prepare("SELECT * FROM ads WHERE ServiceType = ? ");
         $stmt->bind_param("s", $_POST['listService']);
         $stmt->execute();
         $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
+<<<<<<< HEAD
                 echo '<div class="table-responsive">
                         <table class="table">
                         <thead class="thead-dark">
@@ -68,6 +73,15 @@
                                     </tbody>";
                         }
                         echo "</table>";
+=======
+                        echo '<div class="grid-container">';
+                        while($row = $result->fetch_assoc()) {
+                          echo '<div class="cols-md-4">';
+                            echo $row['AdAz'];
+                            // include ('../includes/listServices.php');
+                            echo '</div><br>';
+                        }
+>>>>>>> 3263e6e5efd970c0a8b5ee25221056fd9e4ca2d4
                         echo '</div><br>';
                         } else {
                         echo "Nincs elérhető adat.";
